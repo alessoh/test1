@@ -13,13 +13,13 @@ if 'postmortem_complete' not in st.session_state:
 if 'postmortem_result' not in st.session_state:
     st.session_state.postmortem_result = None
 
-st.title("AI Analysis")
+st.title("SYZYGI AI Analysis")
 
 # Text input for user's custom request
 user_request = st.text_area("Enter your request for analysis:", 
                             "Analyze the latest advancements in AI in 2024. Identify key trends, breakthrough technologies, and potential industry impacts.")
 
-if st.button("SYSZYGI Run Analysis") or (user_request and not st.session_state.analysis_complete):
+if st.button("Run Analysis") or (user_request and not st.session_state.analysis_complete):
     if user_request.strip() == "":
         st.warning("Please enter a request for analysis.")
     else:
