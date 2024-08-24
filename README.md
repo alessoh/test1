@@ -21,6 +21,10 @@ Syzygi is an AI Agent Team Architecture that mimics features of the neural net T
 
 Syzygi presents a novel architecture that synergizes the strengths of specialized AI agents with powerful mechanisms found in transformer models. It is centered around a large language model (LLM) acting as a neural transformer, enhancing collaborative problem-solving, adaptability, and scalability in AI systems.
 
+# Diagram
+
+![Alt text](./agentTransformer2.png)
+
 # How Syzygi Extends CrewAI
 Syzygi builds upon CrewAI's foundation to create a more sophisticated and adaptable AI agent collaboration system:
 
