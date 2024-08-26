@@ -1,6 +1,24 @@
 import os
+from datetime import datetime
 from crewai import Agent, Task, Crew, Process
 from crewai_tools import SerperDevTool
+
+def save_to_file(content, file_type):
+    # Create a 'results' directory if it doesn't exist
+    if not os.path.exists('results'):
+        os.makedirs('results')
+    
+    # Generate a timestamp for the filename
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    
+    # Create the filename
+    filename = f"results/{file_type}_{timestamp}.txt"
+    
+    # Write the content to the file
+    with open(filename, 'w', encoding='utf-8') as file:
+        file.write(content)
+    
+    return filename
 
 def run_crew(user_request):
     os.environ["OPENAI_API_KEY"] = ""
@@ -50,6 +68,11 @@ def run_crew(user_request):
     )
 
     result = crew.kickoff()
+    
+    # Save the analysis result to a file
+    analysis_file = save_to_file(str(result), "analysis")
+    print(f"Analysis results saved to {analysis_file}")
+    
     return result
 
 def run_postmortem(postmortem_request, previous_result):
@@ -86,6 +109,11 @@ def run_postmortem(postmortem_request, previous_result):
     )
 
     postmortem_result = postmortem_crew.kickoff()
+    
+    # Save the postmortem result to a file
+    postmortem_file = save_to_file(str(postmortem_result), "postmortem")
+    print(f"Postmortem results saved to {postmortem_file}")
+    
     return postmortem_result
 
 if __name__ == "__main__":

@@ -1,4 +1,6 @@
 import streamlit as st
+import os
+from datetime import datetime
 from app import run_crew, run_postmortem
 
 st.set_page_config(page_title="SYZYGI AI Analysis", page_icon="🤖", layout="wide")
@@ -12,6 +14,23 @@ if 'postmortem_complete' not in st.session_state:
     st.session_state.postmortem_complete = False
 if 'postmortem_result' not in st.session_state:
     st.session_state.postmortem_result = None
+
+def save_to_file(content, file_type):
+    # Create a 'results' directory if it doesn't exist
+    if not os.path.exists('results'):
+        os.makedirs('results')
+    
+    # Generate a timestamp for the filename
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    
+    # Create the filename
+    filename = f"results/{file_type}_{timestamp}.txt"
+    
+    # Write the content to the file
+    with open(filename, 'w', encoding='utf-8') as file:
+        file.write(content)
+    
+    return filename
 
 st.title("SYZYGI AI Analysis")
 
@@ -33,6 +52,10 @@ if st.session_state.analysis_complete:
     st.header("Analysis and Blog Post")
     st.markdown(str(st.session_state.analysis_result))
 
+    # Save analysis results to file
+    analysis_file = save_to_file(str(st.session_state.analysis_result), "analysis")
+    st.success(f"Analysis results saved to {analysis_file}")
+
     # New section for postmortem analysis
     st.header("Postmortem Analysis")
     postmortem_request = st.text_area("Enter your request for postmortem analysis:", 
@@ -49,6 +72,10 @@ if st.session_state.analysis_complete:
     if st.session_state.postmortem_complete:
         st.success("Postmortem analysis complete!")
         st.markdown(str(st.session_state.postmortem_result))
+
+        # Save postmortem results to file
+        postmortem_file = save_to_file(str(st.session_state.postmortem_result), "postmortem")
+        st.success(f"Postmortem results saved to {postmortem_file}")
 
 st.sidebar.header("About")
 st.sidebar.info(

@@ -23,7 +23,7 @@ Syzygi presents a novel architecture that synergizes the strengths of specialize
 
 # Diagram
 
-![Alt text](./agentTransformer2.png)
+![Alt text](./agentTransformer3.png)
 
 # How Syzygi Extends CrewAI
 Syzygi builds upon CrewAI's foundation to create a more sophisticated and adaptable AI agent collaboration system:
