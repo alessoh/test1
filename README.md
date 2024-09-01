@@ -15,7 +15,7 @@ As AI foundation models advance, they are approaching PhD-level reasoning and lo
 AI agent teams partnering with professionals face poor coordination, limited adaptability, and inconsistent performance. Trust issues and integration hurdles hinder adoption. AI needs better collaboration mechanisms, adaptive learning, and robust feedback loops to improve.
 
 ### The Solution
-Syzygi is an AI Agent Team Architecture that mimics features of the neural net Transformer Architecture used to train LLMs. It provides power and flexibility for AI agents to synchronize their tasks on one project and train as a team over many projects.
+Syzygi is an AI Agent Team Architecture that mimics features of the neural net Transformer Architecture used to train LLMs. It provides power and flexibility for AI agents to synchronize their tasks on one project and train as a team over many projects. The LLM acts as the brain to conduct reasoning and make decisions while the agents act as its 'arms and legs.' The agent 'arms and legs' are search engines. grammar editors, and other tools to carryout the tasks to reach the goal.
 
 ## Syzygi - AI Agent Team Architecture
 
