@@ -1,130 +1,125 @@
-# SYZYGI
+# SYZYGI AI Analysis
 
-Syzygi is a self-improvement framework for orchestrating role-playing, autonomous AI agents. Built on top of CrewAI, Syzygi fosters collaborative intelligence, empowering agents to work together seamlessly and tackle complex tasks.
+SYZYGI is a self-improvement framework for orchestrating role-playing, autonomous AI agents. Built on top of CrewAI, SYZYGI fosters collaborative intelligence, empowering agents to work together seamlessly and tackle complex tasks.
 
-### [Homepage]
-AI HIVE (https://www.ai-hive.net/syzygi)
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Project Structure](#project-structure)
+6. [Postmortem Analysis](#postmortem-analysis)
+7. [Future Enhancements](#future-enhancements)
+8. [Contributing](#contributing)
+9. [License](#license)
+10. [Contact](#contact)
 
-### contact: 
-info@ai-hive.net
+## Introduction
 
-### Introduction
 As AI foundation models advance, they are approaching PhD-level reasoning and logic abilities. While AI doctors, lawyers, and engineers aren't ready to practice independently, every professional will want a specialized AI partner to assist them in delivering premium service to their clients.
 
-### The Problem
-AI agent teams partnering with professionals face poor coordination, limited adaptability, and inconsistent performance. Trust issues and integration hurdles hinder adoption. AI needs better collaboration mechanisms, adaptive learning, and robust feedback loops to improve.
+SYZYGI addresses the challenges of poor coordination, limited adaptability, and inconsistent performance in AI agent teams. It provides power and flexibility for AI agents to synchronize their tasks on one project and train as a team over many projects.
 
-### The Solution
-Syzygi is an AI Agent Team Architecture that mimics features of the neural net Transformer Architecture used to train LLMs. It provides power and flexibility for AI agents to synchronize their tasks on one project and train as a team over many projects. The LLM acts as the brain to conduct reasoning and make decisions while the agents act as its 'arms and legs.' The agent 'arms and legs' are search engines. grammar editors, and other tools to carryout the tasks to reach the goal.
+## Features
 
-## Syzygi - AI Agent Team Architecture
+- **Role-Based Agent Design:** Customize agents with specific roles, goals, and tools.
+- **Autonomous Inter-Agent Delegation:** Agents can autonomously delegate tasks and inquire amongst themselves.
+- **Flexible Task Management:** Define tasks with customizable tools and assign them to agents dynamically.
+- **Processes Driven:** Supports sequential task execution and hierarchical processes.
+- **Output Handling:** Save outputs as files or parse them as Pydantic models or JSON.
+- **Open Source Model Compatibility:** Works with both proprietary (e.g., OpenAI) and open-source models.
+- **Postmortem Analysis:** Comprehensive evaluation of team performance after each analysis task.
 
-Syzygi presents a novel architecture that synergizes the strengths of specialized AI agents with powerful mechanisms found in transformer models. It is centered around a large language model (LLM) acting as a neural transformer, enhancing collaborative problem-solving, adaptability, and scalability in AI systems.
+## Installation
 
-# Diagram
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/test1.git
+   cd syzygi
+   ```
 
-![Alt text](./arch3.png)
+2. Create and activate a virtual environment:
+   ```
+   conda create -n test1 python=3.11
+   cd test1
+   conda activate test1
 
-# How Syzygi Extends CrewAI
- While LangChain provides a comprehensive toolkit for building LLM-powered applications, CrewAI specializes in creating collaborative multi-agent systems. CrewAI leverages LangChain's capabilities but adds a layer of abstraction specifically designed for orchestrating multiple AI agents working together on complex tasks. Syzygi builds upon CrewAI's foundation to create a more sophisticated and adaptable AI agent self-improvement system.
+   ```
 
-### Neural Transformer:
-Implements a central LLM to coordinate and integrate agent outputs, inspired by transformer architectures.
-Adaptive Prompting: Dynamically generates prompts for agents based on task context, enhancing flexibility and performance.
-Task Decomposition: Introduces a module for breaking down complex problems into manageable subtasks, improving efficiency and parallelization.
+3. Install the required packages:
+   ```
+   pip install -r requirements.txt
+   ```
 
-### Transformer-Inspired Mechanisms: 
-Adapts concepts like attention mechanisms for task-agent relevance scoring and dynamic agent prioritization.
-Enhanced Feedback Loops: Implements multi-layered feedback systems including inter-agent, central LLM to agent, and user to system feedback for continuous improvement.
+4. Set up your environment variables:
+   Create a `.env` file in the project root and add your API keys:
+   ```
+   OPENAI_API_KEY=your_openai_api_key
+   SERPER_API_KEY=your_serper_api_key
+   ```
 
-### Weight Parameter System: 
-Dynamically adjusts the influence of different components, balancing stability and adaptability.
-Scalability: Designed with production environments in mind, allowing for easier scaling and integration with existing systems.
+## Usage
 
-### Flexible Process Management: 
-While building on CrewAI's sequential and hierarchical processes, Syzygi aims to introduce more complex processes like consensual and autonomous in future iterations.
-
-# Key Features
-
-### Role-Based Agent Design: 
-Customize agents with specific roles, goals, and tools.
-
-### Autonomous Inter-Agent Delegation: 
-Agents can autonomously delegate tasks and inquire amongst themselves.
-
-### Flexible Task Management: 
-Define tasks with customizable tools and assign them to agents dynamically.
-
-### Processes Driven: 
-Supports sequential task execution and hierarchical processes.
-
-### Output Handling: 
-Save outputs as files or parse them as Pydantic models or JSON.
-
-### Open Source Model Compatibility: 
-Works with both proprietary (e.g., OpenAI) and open-source models.
-
-# Installation
-
-## Getting Started
-To get started follow these simple steps:
-
-### 1. Installation
+Run the Streamlit app:
 ```
-pip install crewai
-```
-```
-pip install 'crewai[tools]'
-```
-### 2. Setting Up Your Crew
-``` 
-pip install -r requirements.txt
-```
-### add new file 
-```
-app.py
-```
-### add file 
-```
-streamlit_app.py
-```
-### Run
-``` 
 streamlit run streamlit_app.py
-``` 
+```
+
+Follow the prompts in the web interface to conduct AI analyses and postmortem evaluations.
+
 ## Project Structure
-### app.py: 
-Core logic for running AI crews and postmortem analysis
 
-### streamlit_app.py: 
-Streamlit-based user interface
+- `app.py`: Core logic for running AI crews and postmortem analysis
+- `streamlit_app.py`: Streamlit-based user interface
+- `postmortem_data_processor.py`: Handles postmortem data collection and preprocessing
+- `requirements.txt`: Project dependencies
 
-### requirements.txt: 
-Project dependencies
+## Postmortem Analysis
 
-### How Syzygi Extends CrewAI
-Syzygi builds upon CrewAI's foundation to create a more sophisticated and adaptable AI agent collaboration system:
+The postmortem analysis feature provides a comprehensive evaluation of the AI crew's performance after completing an analysis task. This feature helps identify strengths, areas for improvement, and generates actionable recommendations for future tasks.
 
-## Project Structure under development
-### Neural Transformer: 
-Implements a central LLM to coordinate and integrate agent outputs, inspired by transformer architectures.
-Adaptive Prompting: Dynamically generates prompts for agents based on task context, enhancing flexibility and performance.
+### Key Components:
 
-### Task Decomposition: 
-Introduces a module for breaking down complex problems into manageable subtasks, improving efficiency and parallelization.
+1. **Postmortem Execution (`app.py`):**
+   - The `run_postmortem` function orchestrates the postmortem analysis.
+   - Uses a dedicated 'Postmortem Analyst' agent to evaluate the team's performance.
+   - Processes the analysis results and structures the output for easy interpretation.
 
-### Transformer-Inspired Mechanisms: 
-Adapts concepts like attention mechanisms for task-agent relevance scoring and dynamic agent prioritization.
+2. **Data Processing (`postmortem_data_processor.py`):**
+   - Handles the collection and preprocessing of postmortem data.
+   - Prepares the data for potential future machine learning analysis.
 
-### Enhanced Feedback Loops: 
-Implements multi-layered feedback systems including inter-agent, central LLM to agent, and user to system feedback for continuous improvement.
+3. **Output Structure:**
+   - Results are structured into sections such as "What Went Well", "What Could Be Improved", and "Specific Recommendations".
+   - Saved in both text and JSON formats for flexibility in further processing or display.
 
-### Weight Parameter System: 
-Dynamically adjusts the influence of different components, balancing stability and adaptability.
-Scalability: Designed with production environments in mind, allowing for easier scaling and integration with existing systems.
+4. **User Interface (`streamlit_app.py`):**
+   - Provides an interactive interface for users to initiate and view postmortem analyses.
+   - Displays the structured postmortem results in a readable format.
+   - Offers a download option for the full postmortem results as a JSON file.
 
-### Flexible Process Management: 
-While building on CrewAI's sequential and hierarchical processes, Syzygi aims to introduce more complex processes like consensual and autonomous in future iterations.
+## Future Enhancements
+
+- Implementation of a neural transformer for better agent coordination.
+- Development of a weight parameter system for dynamic adjustment of component influence.
+- Expansion of process management to include consensual and autonomous processes.
+- Integration of more advanced feedback loops for continuous improvement.
+- Implementation of a plugin system to allow for easy extension of agent capabilities.
+- Addition of visualization components to help users understand the analysis process and results.
+- Integration of machine learning models for automated performance evaluation in postmortems.
+- Trend analysis across multiple postmortems to identify patterns in team performance over time.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+- **Homepage:** [AI HIVE](https://www.ai-hive.net/syzygi)
+- **Email:** info@ai-hive.net
+
+For any questions or feedback, please open an issue in the GitHub repository or contact us via email.
