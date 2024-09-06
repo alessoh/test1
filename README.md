@@ -98,6 +98,10 @@ The postmortem analysis feature provides a comprehensive evaluation of the AI cr
    - Displays the structured postmortem results in a readable format.
    - Offers a download option for the full postmortem results as a JSON file.
 
+# Diagram
+
+![Alt text](./arch3.png)
+
 ## Future Enhancements
 
 - Implementation of a neural transformer for better agent coordination.
