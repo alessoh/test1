@@ -110,6 +110,10 @@ The postmortem analysis feature provides a comprehensive evaluation of the AI cr
    - Results are structured into sections such as "What Went Well", "What Could Be Improved", and "Specific Recommendations".
    - Saved in both text and JSON formats for flexibility in further processing or display.
 
+   # Diagram
+
+![Alt text](./arch3.png)
+
 ## Continuous Learning
 
 SYZYGI implements a continuous learning module to improve its performance over time:
