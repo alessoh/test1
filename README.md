@@ -1,18 +1,20 @@
-# SYZYGI AI Analysis
+# SYZYGI: AI Agent Orchestration Framework
 
-SYZYGI is a self-improvement framework for orchestrating role-playing, autonomous AI agents. Built on top of CrewAI, SYZYGI fosters collaborative intelligence, empowering agents to work together seamlessly and tackle complex tasks.
+SYZYGI is an advanced self-improvement framework for orchestrating role-playing, autonomous AI agents. Built on top of CrewAI, SYZYGI fosters collaborative intelligence, empowering agents to work together seamlessly and tackle complex tasks.
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Features](#features)
-3. [Installation](#installation)
-4. [Usage](#usage)
-5. [Project Structure](#project-structure)
-6. [Postmortem Analysis](#postmortem-analysis)
-7. [Future Enhancements](#future-enhancements)
-8. [Contributing](#contributing)
-9. [License](#license)
-10. [Contact](#contact)
+2. [Key Features](#key-features)
+3. [Architecture](#architecture)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [Project Structure](#project-structure)
+7. [Postmortem Analysis](#postmortem-analysis)
+8. [Continuous Learning](#continuous-learning)
+9. [Future Enhancements](#future-enhancements)
+10. [Contributing](#contributing)
+11. [License](#license)
+12. [Contact](#contact)
 
 ## Introduction
 
@@ -20,7 +22,7 @@ As AI foundation models advance, they are approaching PhD-level reasoning and lo
 
 SYZYGI addresses the challenges of poor coordination, limited adaptability, and inconsistent performance in AI agent teams. It provides power and flexibility for AI agents to synchronize their tasks on one project and train as a team over many projects.
 
-## Features
+## Key Features
 
 - **Role-Based Agent Design:** Customize agents with specific roles, goals, and tools.
 - **Autonomous Inter-Agent Delegation:** Agents can autonomously delegate tasks and inquire amongst themselves.
@@ -29,21 +31,33 @@ SYZYGI addresses the challenges of poor coordination, limited adaptability, and 
 - **Output Handling:** Save outputs as files or parse them as Pydantic models or JSON.
 - **Open Source Model Compatibility:** Works with both proprietary (e.g., OpenAI) and open-source models.
 - **Postmortem Analysis:** Comprehensive evaluation of team performance after each analysis task.
+- **Continuous Learning:** Scheduled model retraining for long-term improvement.
+
+## Architecture
+
+SYZYGI uses a modular architecture with separate components for different functionalities:
+
+1. **Core Logic (app.py):** Manages AI crews and orchestrates the main workflow.
+2. **User Interface (streamlit_app.py):** Provides an intuitive Streamlit-based interface for user interactions.
+3. **Postmortem Analysis:**
+   - Data Processing (postmortem_data_processor.py)
+   - Machine Learning Model (postmortem_analysis_model.py)
+4. **Continuous Learning (continuous_learning_module.py):** Handles scheduled model retraining.
+
+The project leverages CrewAI for agent orchestration and extends it with custom postmortem analysis and continuous learning capabilities.
 
 ## Installation
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/test1.git
+   git clone https://github.com/alessoh/syzygi.git
    cd syzygi
    ```
 
 2. Create and activate a virtual environment:
    ```
-   conda create -n test1 python=3.11
-   cd test1
-   conda activate test1
-
+   conda create -n syzygi python=3.11
+   conda activate syzygi
    ```
 
 3. Install the required packages:
@@ -72,6 +86,8 @@ Follow the prompts in the web interface to conduct AI analyses and postmortem ev
 - `app.py`: Core logic for running AI crews and postmortem analysis
 - `streamlit_app.py`: Streamlit-based user interface
 - `postmortem_data_processor.py`: Handles postmortem data collection and preprocessing
+- `postmortem_analysis_model.py`: Defines the neural network model for postmortem analysis
+- `continuous_learning_module.py`: Implements continuous model retraining
 - `requirements.txt`: Project dependencies
 
 ## Postmortem Analysis
@@ -81,26 +97,26 @@ The postmortem analysis feature provides a comprehensive evaluation of the AI cr
 ### Key Components:
 
 1. **Postmortem Execution (`app.py`):**
-   - The `run_postmortem` function orchestrates the postmortem analysis.
-   - Uses a dedicated 'Postmortem Analyst' agent to evaluate the team's performance.
-   - Processes the analysis results and structures the output for easy interpretation.
+   - Orchestrates the postmortem analysis using a dedicated 'Postmortem Analyst' agent.
+   - Processes and structures the analysis results for easy interpretation.
 
 2. **Data Processing (`postmortem_data_processor.py`):**
-   - Handles the collection and preprocessing of postmortem data.
-   - Prepares the data for potential future machine learning analysis.
+   - Collects and preprocesses postmortem data for potential machine learning analysis.
 
-3. **Output Structure:**
+3. **Machine Learning Model (`postmortem_analysis_model.py`):**
+   - Defines a neural network for advanced postmortem analysis (integration pending).
+
+4. **Output Structure:**
    - Results are structured into sections such as "What Went Well", "What Could Be Improved", and "Specific Recommendations".
    - Saved in both text and JSON formats for flexibility in further processing or display.
 
-4. **User Interface (`streamlit_app.py`):**
-   - Provides an interactive interface for users to initiate and view postmortem analyses.
-   - Displays the structured postmortem results in a readable format.
-   - Offers a download option for the full postmortem results as a JSON file.
+## Continuous Learning
 
-# Diagram
+SYZYGI implements a continuous learning module to improve its performance over time:
 
-![Alt text](./arch3.png)
+- Scheduled model retraining based on accumulated postmortem data.
+- Utilizes the `ContinuousLearningModule` class for managing the retraining process.
+- Allows for dynamic adjustment of the AI agents' behavior based on past performance.
 
 ## Future Enhancements
 
@@ -110,12 +126,21 @@ The postmortem analysis feature provides a comprehensive evaluation of the AI cr
 - Integration of more advanced feedback loops for continuous improvement.
 - Implementation of a plugin system to allow for easy extension of agent capabilities.
 - Addition of visualization components to help users understand the analysis process and results.
-- Integration of machine learning models for automated performance evaluation in postmortems.
+- Full integration of the machine learning model for automated performance evaluation in postmortems.
 - Trend analysis across multiple postmortems to identify patterns in team performance over time.
+- Comprehensive test suite for ensuring reliability and easier maintenance.
+- Enhanced error handling and logging system for better debugging and monitoring.
+- Configuration file for easily adjustable parameters (e.g., model hyperparameters, scheduling intervals).
+- Improved API documentation with detailed docstrings for all functions and classes.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit a Pull Request. Here are some areas where contributions would be particularly valuable:
+
+- Implementing any of the future enhancements listed above.
+- Improving test coverage and documentation.
+- Optimizing performance of existing components.
+- Adding new features or integrations that align with SYZYGI's goals.
 
 ## License
 
@@ -126,4 +151,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - **Homepage:** [AI HIVE](https://www.ai-hive.net/syzygi)
 - **Email:** info@ai-hive.net
 
-For any questions or feedback, please open an issue in the GitHub repository or contact us via email.
+For any questions, feedback, or bug reports, please open an issue in the GitHub repository or contact us via email.
