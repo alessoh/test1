@@ -112,7 +112,7 @@ The postmortem analysis feature provides a comprehensive evaluation of the AI cr
 
    # Diagram
 
-![Alt text](./arch3.png)
+![Alt text](./logic.png)
 
 ## Continuous Learning
 
