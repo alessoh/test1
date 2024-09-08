@@ -110,7 +110,7 @@ The postmortem analysis feature provides a comprehensive evaluation of the AI cr
    - Results are structured into sections such as "What Went Well", "What Could Be Improved", and "Specific Recommendations".
    - Saved in both text and JSON formats for flexibility in further processing or display.
 
-   # Diagram of surrent logic
+   # Diagram of current logic
 
 ![Alt text](./logic.png)
 
