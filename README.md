@@ -110,7 +110,7 @@ The postmortem analysis feature provides a comprehensive evaluation of the AI cr
    - Results are structured into sections such as "What Went Well", "What Could Be Improved", and "Specific Recommendations".
    - Saved in both text and JSON formats for flexibility in further processing or display.
 
-   # Diagram
+   # Diagram of surrent logic
 
 ![Alt text](./logic.png)
 
@@ -136,6 +136,10 @@ SYZYGI implements a continuous learning module to improve its performance over t
 - Enhanced error handling and logging system for better debugging and monitoring.
 - Configuration file for easily adjustable parameters (e.g., model hyperparameters, scheduling intervals).
 - Improved API documentation with detailed docstrings for all functions and classes.
+
+   # Diagram of neural net logic under development
+
+![Alt text](./neuralnetlogic.png)
 
 ## Contributing
 
